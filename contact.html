@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Send North Star Bakery a pre-order request or question, and find our location and hours of operation.">
+  <title>Contact and Pre-Orders | North Star Bakery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&amp;family=Literata:wght@400;600&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <img src="images/bakery-logo.png" alt="North Star Bakery logo: a loaf of bread with a wheat stalk inside it. Go to the home page." width="200" height="171">
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html" aria-current="page">Contact and Pre-Orders</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-intro">
+      <h1>Contact Us and Place a Pre-Order</h1>
+      <p class="lead">Reserve bread for pickup, order a cake for an event, or ask us a question. We reply within one business day.</p>
+    </section>
+
+    <div class="contact-layout">
+      <section class="form-panel">
+        <h2>Pre-order and inquiry request form</h2>
+        <p>Fields marked with an asterisk (*) are required.</p>
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Your contact information</legend>
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Full name *</label>
+                <input type="text" id="name" name="name" autocomplete="name" required minlength="2" maxlength="60">
+              </div>
+              <div class="field">
+                <label for="email">Email address *</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="phone">Phone number (optional, format 612-555-0142)</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="612-555-0142">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Your request</legend>
+            <div class="field-row">
+              <div class="field">
+                <label for="request-type">Request type *</label>
+                <select id="request-type" name="request_type" required>
+                  <option value="">Choose a request type</option>
+                  <option value="pre-order">Pre-order for pickup</option>
+                  <option value="custom-cake">Custom or celebration cake</option>
+                  <option value="event-order">Event or catering order</option>
+                  <option value="general-question">General question</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="pickup-date">Pickup date (for pre-orders)</label>
+                <input type="date" id="pickup-date" name="pickup_date">
+              </div>
+            </div>
+            <p class="hint">Bread needs 1 day's notice and custom cakes need 3 days.</p>
+            <div class="field">
+              <label for="item-details">Item details or question *</label>
+              <textarea id="item-details" name="item_details" rows="5" required minlength="5" maxlength="1000" placeholder="Example: 2 Signature Loaves and a dozen butter croissants"></textarea>
+            </div>
+            <div class="field">
+              <label for="allergy-notes">Allergy notes, if applicable</label>
+              <textarea id="allergy-notes" name="allergy_notes" rows="3" maxlength="500"></textarea>
+            </div>
+            <p class="hint">Please note: our kitchen handles wheat, dairy, eggs, tree nuts, peanuts, and sesame.</p>
+          </fieldset>
+
+          <button class="button" type="submit">Send request</button>
+        </form>
+      </section>
+
+      <aside class="chalkboard">
+        <h2>Location</h2>
+        <address>
+          North Star Bakery<br>
+          214 Larkspur Avenue<br>
+          Minneapolis, MN 55406<br>
+          Phone: <a href="tel:+16125550142">(612) 555-0142</a><br>
+          Email: <a href="mailto:hello@northstarbakery.example">hello@northstarbakery.example</a>
+        </address>
+        <p>We're on the corner of Larkspur and Fifth, a two-minute walk from the Lake Street light rail stop. Street parking is available out front, and there is a bike rack by the door.</p>
+        <h2>Hours of operation</h2>
+        <ul class="hours">
+          <li><span>Tuesday to Friday</span> <span>6:30 a.m. to 6:00 p.m.</span></li>
+          <li><span>Saturday</span> <span>7:00 a.m. to 4:00 p.m.</span></li>
+          <li><span>Sunday</span> <span>7:00 a.m. to 1:00 p.m.</span></li>
+          <li><span>Monday</span> <span>Closed</span></li>
+        </ul>
+        <p>Pre-orders are ready for pickup starting at opening time on your pickup date.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>North Star Bakery<br>214 Larkspur Avenue, Minneapolis, MN 55406</p>
+      <p>Phone: <a href="tel:+16125550142">(612) 555-0142</a><br>Email: <a href="mailto:hello@northstarbakery.example">hello@northstarbakery.example</a></p>
+      <p>&copy; 2026 North Star Bakery.<br>Baked by hand in the neighborhood.</p>
+    </div>
+  </footer>
+</body>
+</html>

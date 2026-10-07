@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="North Star Bakery is a neighborhood bakery making bread, pastries, and cakes by hand every morning. Pre-order for pickup.">
+  <title>North Star Bakery | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&amp;family=Literata:wght@400;600&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <img src="images/bakery-logo.png" alt="North Star Bakery logo: a loaf of bread with a wheat stalk inside it. Go to the home page." width="200" height="171">
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact and Pre-Orders</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="split">
+        <div class="split-text">
+          <h1>Welcome to North Star Bakery</h1>
+          <p class="lead">We've been baking for this neighborhood since 2012. Every loaf, croissant, and birthday cake leaves our ovens the same day it's sold, shaped by hand by people who live just down the street.</p>
+          <p>Stop in on your way to work, bring the kids by for a cookie, or let us handle the bread for your next gathering.</p>
+          <p><a class="button" href="contact.html">Place a pre-order</a></p>
+        </div>
+        <div class="split-media">
+          <img src="images/bakery-storefront.png" alt="The North Star Bakery storefront, with slate-green window frames and wooden shelves filled with crusty loaves, baguettes, and pastries behind the glass." width="600" height="358">
+        </div>
+      </div>
+    </section>
+
+    <section class="audio-welcome">
+      <h2>A welcome message from our head baker</h2>
+      <p>Listen to a short hello from Rosa, who opens the bakery at 4 a.m. every morning.</p>
+      <audio controls preload="metadata">
+        <source src="media/bakery-welcome.mp3" type="audio/mpeg">
+        <p>Your browser does not support the audio element. You can <a href="media/bakery-welcome.mp3">download the welcome message (MP3)</a> instead. In it, Rosa welcomes you to North Star Bakery and invites you to stop in or place a pre-order.</p>
+      </audio>
+    </section>
+
+    <section>
+      <h2>What we're known for</h2>
+      <ul class="card-row">
+        <li class="card">
+          <h3>Slow-fermented sourdough</h3>
+          <p>Our loaves rise for up to 36 hours, which gives them a crackly crust and a tender, tangy crumb.</p>
+        </li>
+        <li class="card">
+          <h3>Morning pastries</h3>
+          <p>Butter croissants, cardamom knots, and seasonal fruit danishes, ready by 6:30 a.m. for the commuter crowd.</p>
+        </li>
+        <li class="card">
+          <h3>Celebration cakes</h3>
+          <p>Layer cakes for birthdays, showers, and office parties, decorated to order with 72 hours' notice.</p>
+        </li>
+      </ul>
+      <p><a href="products.html">See all of our breads, pastries, and cakes</a></p>
+    </section>
+
+    <section>
+      <div class="split">
+        <div class="split-media">
+          <picture>
+            <source media="(min-width: 800px)" srcset="images/bakery-feature-large.png" width="800" height="400">
+            <img src="images/bakery-feature-small.png" alt="Wooden trays in our pastry case stacked with brown butter chocolate chunk cookies, sugar-topped sandwich cookies, and iced shortbread rounds." width="400" height="400">
+          </picture>
+        </div>
+        <div class="split-text">
+          <p class="eyebrow">Featured item of the week</p>
+          <h2>Brown butter chocolate chunk cookies</h2>
+          <p>We brown the butter until it smells like toffee, fold in chopped dark chocolate, and finish each cookie with a pinch of flaky salt. Crisp edges, soft middles, and big enough to share.</p>
+          <p class="price">$3.50 each or $18 for a half dozen</p>
+          <p>Feeding a crowd? <a href="contact.html">Pre-order a dozen or more cookies</a> and we'll box them for you.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="split">
+        <div class="split-text">
+          <h2>Hours and location</h2>
+          <address>
+            North Star Bakery<br>
+            214 Larkspur Avenue<br>
+            Minneapolis, MN 55406
+          </address>
+          <p>We're on the corner of Larkspur and Fifth, a two-minute walk from the Lake Street light rail stop. Street parking is available out front.</p>
+          <p><a href="contact.html">Get directions, hours, and pre-order information</a></p>
+        </div>
+        <div class="chalkboard">
+          <h3>Hours</h3>
+          <ul class="hours">
+          <li><span>Tuesday to Friday</span> <span>6:30 a.m. to 6:00 p.m.</span></li>
+          <li><span>Saturday</span> <span>7:00 a.m. to 4:00 p.m.</span></li>
+          <li><span>Sunday</span> <span>7:00 a.m. to 1:00 p.m.</span></li>
+          <li><span>Monday</span> <span>Closed</span></li>
+        </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>North Star Bakery<br>214 Larkspur Avenue, Minneapolis, MN 55406</p>
+      <p>Phone: <a href="tel:+16125550142">(612) 555-0142</a><br>Email: <a href="mailto:hello@northstarbakery.example">hello@northstarbakery.example</a></p>
+      <p>&copy; 2026 North Star Bakery.<br>Baked by hand in the neighborhood.</p>
+    </div>
+  </footer>
+</body>
+</html>
