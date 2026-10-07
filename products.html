@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&amp;family=Literata:wght@400;600&amp;display=swap">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -41,6 +42,17 @@
       </nav>
     </section>
 
+    <section id="my-list" class="order-list" aria-labelledby="my-list-heading">
+      <h2 id="my-list-heading">My pre-order list</h2>
+      <p>Tap <strong>Add to my list</strong> on any item below to plan your order. Your list is saved on this device, so it will still be here when you come back or move to the pre-order form.</p>
+      <p class="list-count" id="list-count" aria-live="polite">Your list is empty.</p>
+      <ul class="saved-items" id="saved-items"></ul>
+      <div class="list-actions" id="list-actions" hidden>
+        <a class="button" href="contact.html">Use this list in a pre-order</a>
+        <button class="button button-outline" type="button" id="clear-list">Clear my list</button>
+      </div>
+    </section>
+
     <section id="breads">
       <h2>Breads</h2>
       <div class="split">
@@ -48,22 +60,22 @@
           <img src="images/bakery-bread.png" alt="Rustic loaves in our bread case: a flour-dusted country loaf with a deep golden score, a dark seeded multigrain, and rows of scored boules behind the glass." width="500" height="500">
         </div>
         <ul class="menu">
-          <li class="card">
+          <li class="card" data-product-id="country-sourdough">
             <h3>Country sourdough</h3>
             <p class="price">$8 to $11</p>
             <p>Our everyday loaf. Naturally leavened with a 36-hour ferment and a blistered crust. Available as half and whole loaves.</p>
           </li>
-          <li class="card">
+          <li class="card" data-product-id="seeded-multigrain">
             <h3>Seeded multigrain</h3>
             <p class="price">$9 to $12</p>
             <p>Rye and whole wheat with flax, sunflower, and pumpkin seeds. Great toasted.</p>
           </li>
-          <li class="card">
+          <li class="card" data-product-id="baguettes">
             <h3>Baguettes</h3>
             <p class="price">$4 to $6</p>
             <p>Classic, sesame, or demi. Best eaten the same day.</p>
           </li>
-          <li class="card">
+          <li class="card" data-product-id="sandwich-loaves">
             <h3>Sandwich loaves</h3>
             <p class="price">$7 to $9</p>
             <p>Honey oat and buttermilk white, soft enough for school lunches.</p>
@@ -76,7 +88,7 @@
           <img src="images/bakery-signature-loaf.png" alt="A round, dark-crusted rye loaf dusted with flour, cradled in a white and tan checked linen towel." width="500" height="500">
           <figcaption>The North Star Signature Loaf: dark rye sourdough with a touch of molasses and caraway, baked in cast iron. $12 per loaf.</figcaption>
         </figure>
-        <div class="split-text">
+        <div class="split-text" data-product-id="signature-loaf">
           <h3>Our Signature Loaf</h3>
           <p>This is the bread that started it all. We bake a limited number on Fridays and Saturdays, and they usually sell out by noon.</p>
           <p class="price">$12 per loaf</p>
@@ -89,22 +101,22 @@
     <section id="pastries">
       <h2>Pastries</h2>
       <ul class="menu menu-grid">
-          <li class="card">
+          <li class="card" data-product-id="butter-croissants">
             <h3>Butter croissants</h3>
             <p class="price">$3.75 to $5</p>
             <p>Plain, almond, or chocolate. Laminated over three days with cultured butter.</p>
           </li>
-          <li class="card">
+          <li class="card" data-product-id="cardamom-knots">
             <h3>Cardamom knots</h3>
             <p class="price">$4 to $4.50</p>
             <p>A Scandinavian-style twist, brushed with syrup and rolled in pearl sugar.</p>
           </li>
-          <li class="card">
+          <li class="card" data-product-id="seasonal-danishes">
             <h3>Seasonal danishes</h3>
             <p class="price">$4.25 to $5.50</p>
             <p>Whatever fruit is best that week, on flaky dough with a little vanilla custard.</p>
           </li>
-          <li class="card">
+          <li class="card" data-product-id="morning-buns-and-scones">
             <h3>Morning buns and scones</h3>
             <p class="price">$3.50 to $4.75</p>
             <p>Orange-cinnamon morning buns, plus a rotating scone (cheddar chive on weekends).</p>
@@ -115,17 +127,17 @@
     <section id="cakes">
       <h2>Cakes</h2>
       <ul class="menu menu-grid">
-          <li class="card">
+          <li class="card" data-product-id="layer-cakes">
             <h3>Layer cakes</h3>
             <p class="price">$38 to $85</p>
             <p>Sizes from 6 inches to 10 inches. Chocolate fudge, vanilla bean, lemon raspberry, or carrot with cream cheese frosting.</p>
           </li>
-          <li class="card">
+          <li class="card" data-product-id="sheet-cakes-for-events">
             <h3>Sheet cakes for events</h3>
             <p class="price">$60 to $140</p>
             <p>Quarter to full sheets, serving 20 to 80 guests. Simple lettering included.</p>
           </li>
-          <li class="card">
+          <li class="card" data-product-id="cupcakes">
             <h3>Cupcakes</h3>
             <p class="price">$3.50 each, or $36 to $40 per dozen</p>
             <p>Mix and match up to three flavors per dozen.</p>
@@ -137,17 +149,17 @@
     <section id="cookies">
       <h2>Cookies and treats</h2>
       <ul class="menu menu-grid">
-          <li class="card">
+          <li class="card" data-product-id="cookies">
             <h3>Cookies</h3>
             <p class="price">$2.75 to $3.50</p>
             <p>Brown butter chocolate chunk, oatmeal cherry, iced shortbread, and the featured cookie of the week.</p>
           </li>
-          <li class="card">
+          <li class="card" data-product-id="bars-and-brownies">
             <h3>Bars and brownies</h3>
             <p class="price">$3.50 to $4.50</p>
             <p>Fudgy brownies, lemon bars, and salted caramel blondies.</p>
           </li>
-          <li class="card">
+          <li class="card" data-product-id="party-trays">
             <h3>Party trays</h3>
             <p class="price">$30 to $75</p>
             <p>Assorted cookies and bars for meetings, showers, and school events.</p>

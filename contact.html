@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&amp;family=Literata:wght@400;600&amp;display=swap">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -37,22 +38,38 @@
       <section class="form-panel">
         <h2>Pre-order and inquiry request form</h2>
         <p>Fields marked with an asterisk (*) are required.</p>
-        <form action="#" method="post">
+
+        <div class="form-status" id="form-status" role="status" aria-live="polite" hidden></div>
+
+        <div class="order-list compact" id="contact-list" hidden>
+          <h3>Your saved pre-order list</h3>
+          <ul class="saved-items" id="contact-saved-items"></ul>
+          <button class="button button-outline" type="button" id="use-list">Add my list to item details</button>
+        </div>
+
+        <form action="#" method="post" id="request-form" novalidate>
           <fieldset>
             <legend>Your contact information</legend>
             <div class="field-row">
               <div class="field">
                 <label for="name">Full name *</label>
-                <input type="text" id="name" name="name" autocomplete="name" required minlength="2" maxlength="60">
+                <input type="text" id="name" name="name" autocomplete="name" required minlength="2" maxlength="60" aria-describedby="name-error">
+                <p class="error-message" id="name-error"></p>
               </div>
               <div class="field">
                 <label for="email">Email address *</label>
-                <input type="email" id="email" name="email" autocomplete="email" required>
+                <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
+                <p class="error-message" id="email-error"></p>
               </div>
             </div>
             <div class="field">
               <label for="phone">Phone number (optional, format 612-555-0142)</label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="612-555-0142">
+              <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="612-555-0142" aria-describedby="phone-error">
+              <p class="error-message" id="phone-error"></p>
+            </div>
+            <div class="checkbox-field">
+              <input type="checkbox" id="remember-me" name="remember_me">
+              <label for="remember-me">Remember my name and email on this device for next time</label>
             </div>
           </fieldset>
 
@@ -61,27 +78,31 @@
             <div class="field-row">
               <div class="field">
                 <label for="request-type">Request type *</label>
-                <select id="request-type" name="request_type" required>
+                <select id="request-type" name="request_type" required aria-describedby="request-type-error">
                   <option value="">Choose a request type</option>
                   <option value="pre-order">Pre-order for pickup</option>
                   <option value="custom-cake">Custom or celebration cake</option>
                   <option value="event-order">Event or catering order</option>
                   <option value="general-question">General question</option>
                 </select>
+                <p class="error-message" id="request-type-error"></p>
               </div>
               <div class="field">
-                <label for="pickup-date">Pickup date (for pre-orders)</label>
-                <input type="date" id="pickup-date" name="pickup_date">
+                <label for="pickup-date">Pickup date (required for orders)</label>
+                <input type="date" id="pickup-date" name="pickup_date" aria-describedby="pickup-hint pickup-date-error">
+                <p class="error-message" id="pickup-date-error"></p>
               </div>
             </div>
-            <p class="hint">Bread needs 1 day's notice and custom cakes need 3 days.</p>
+            <p class="hint" id="pickup-hint">Bread and pastry pre-orders need 1 day's notice. Custom cakes and event orders need 3 days.</p>
             <div class="field">
               <label for="item-details">Item details or question *</label>
-              <textarea id="item-details" name="item_details" rows="5" required minlength="5" maxlength="1000" placeholder="Example: 2 Signature Loaves and a dozen butter croissants"></textarea>
+              <textarea id="item-details" name="item_details" rows="5" required minlength="5" maxlength="1000" placeholder="Example: 2 Signature Loaves and a dozen butter croissants" aria-describedby="item-details-error"></textarea>
+              <p class="error-message" id="item-details-error"></p>
             </div>
             <div class="field">
               <label for="allergy-notes">Allergy notes, if applicable</label>
-              <textarea id="allergy-notes" name="allergy_notes" rows="3" maxlength="500"></textarea>
+              <textarea id="allergy-notes" name="allergy_notes" rows="3" maxlength="500" aria-describedby="allergy-notes-error"></textarea>
+              <p class="error-message" id="allergy-notes-error"></p>
             </div>
             <p class="hint">Please note: our kitchen handles wheat, dairy, eggs, tree nuts, peanuts, and sesame.</p>
           </fieldset>

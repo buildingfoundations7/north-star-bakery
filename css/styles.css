@@ -524,3 +524,248 @@ textarea {
     top: var(--space-m);
   }
 }
+
+/* ==========================================================
+   Touchstone 4: pre-order list and form feedback
+   (uses the same four colors and two fonts)
+   ========================================================== */
+
+/* ---------- Pre-order list panel ---------- */
+
+.order-list {
+  background-color: var(--cream);
+  border: 3px dashed var(--tan);
+  border-radius: var(--radius);
+  padding: var(--space-m);
+  margin: var(--space-l) 0;
+}
+
+main section.order-list {
+  border-bottom: 3px dashed var(--tan);
+  padding: var(--space-m);
+}
+
+.order-list.compact {
+  margin: 0 0 var(--space-m);
+}
+
+.list-count {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--brown);
+}
+
+.saved-items {
+  list-style: none;
+  margin: 0 0 var(--space-m);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+}
+
+.saved-items:empty {
+  margin: 0;
+}
+
+.saved-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-s);
+  padding-bottom: var(--space-s);
+  border-bottom: 1px solid var(--tan);
+}
+
+.saved-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 12rem;
+}
+
+.saved-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.saved-price {
+  font-size: 0.95rem;
+}
+
+.saved-qty-text {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--brown);
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.qty-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--brown);
+  background-color: var(--cream);
+  border: 2px solid var(--brown);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.qty-button:hover {
+  background-color: var(--brown);
+  color: var(--cream);
+}
+
+.qty-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.qty-value {
+  min-width: 1.5rem;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-weight: 800;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--brown);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.list-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+}
+
+.list-actions[hidden] {
+  display: none;
+}
+
+.button-outline {
+  background-color: transparent;
+  color: var(--brown);
+  border: 2px solid var(--brown);
+}
+
+.button-outline:hover {
+  background-color: var(--brown);
+  color: var(--cream);
+}
+
+/* "Add to my list" buttons inside product cards */
+.save-button {
+  margin-top: var(--space-s);
+  padding: 0.5rem 1rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--brown);
+  background-color: var(--cream);
+  border: 2px solid var(--brown);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.save-button:hover,
+.save-button.is-saved {
+  background-color: var(--brown);
+  color: var(--cream);
+}
+
+.save-button.is-saved::before {
+  content: "\2713  ";
+}
+
+/* ---------- Form feedback ---------- */
+
+.error-message {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--brown);
+}
+
+.error-message:empty {
+  display: none;
+}
+
+.error-message::before {
+  content: "\26A0  ";
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--brown);
+  border-width: 3px;
+  border-style: dashed;
+}
+
+.form-status {
+  padding: var(--space-m);
+  margin-bottom: var(--space-m);
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.form-status.is-error {
+  border: 3px dashed var(--brown);
+  color: var(--brown);
+}
+
+.form-status.is-success,
+.form-status.is-info {
+  background-color: var(--slate);
+  color: var(--cream);
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.checkbox-field input {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: 0.3rem;
+  accent-color: var(--brown);
+  flex-shrink: 0;
+}
+
+.checkbox-field label {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+.save-button:focus-visible,
+.qty-button:focus-visible,
+.link-button:focus-visible,
+.list-count:focus-visible {
+  outline: 3px solid var(--brown);
+  outline-offset: 3px;
+}
+
+/* Keep the bread photo at the top of its column next to the long menu */
+@media (min-width: 48em) {
+  #breads .split:first-of-type {
+    align-items: flex-start;
+  }
+}
